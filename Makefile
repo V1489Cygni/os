@@ -7,8 +7,10 @@ ASFLAGS=-f elf32
 LDFLAGS=-melf_i386 -T link.ld
 
 CSOURCES=./k0/main.c ./k0/output.c ./k0/service.c ./k0/gdt.c ./k0/idt.c ./k0/isr.c ./k0/irq.c\
-./k1/main.c ./k1/input.c ./init/init.c ./init/shell.c
-ASMSOURCES=./k0/loader.asm ./k0/gdt.asm ./k0/idt.asm ./k0/isr.asm ./k0/irq.asm
+./k1/main.c ./k1/input.c ./k1/syscalls.c ./k1/syscalls/get_char_tty.c ./k1/syscalls/print_tty.c\
+./init/init.c ./init/shell.c
+ASMSOURCES=./k0/loader.asm ./k0/gdt.asm ./k0/idt.asm ./k0/isr.asm ./k0/irq.asm ./k1/syscalls.asm\
+./include/syscalls.asm
 
 COBJECTS=$(CSOURCES:.c=.o)
 ASMOBJECTS=$(ASMSOURCES:.asm=_asm.o)

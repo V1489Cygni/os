@@ -1,5 +1,4 @@
-#include "../k1/input.h"
-#include "../k0/output.h"
+#include "../include/syscalls.h"
 
 #define BUFFER_SIZE 256
 
@@ -7,29 +6,35 @@ char buffer[BUFFER_SIZE];
 
 void get_line() {
     int now = 0;
+    char c[2];
     for(;;) {
-        char c = get_char();
-        if(c == 0x0e) {
+        sc_get_char(&c[0]);
+        if(c[0] == 0x0e) {
             if(now > 0) {
                 now--;
-                k0_print_char(0x08);
+                c[0] = 0x08;
+                c[1] = '\0';
+                sc_print(&c[0]);
             }
-        } else if(c == 0x1c) {
+        } else if(c[0] == 0x1c) {
             buffer[now] = '\0';
-            k0_print_char('\n');
+            c[0] = '\n';
+            c[1] = '\0';
+            sc_print(&c[0]);
             return;
         } else {
-            buffer[now++] = c;
-            k0_print_char(c);
+            c[1] = '\0';
+            buffer[now++] = c[0];
+            sc_print(&c[0]);
         }
     }
 }
 
 int shell_main() {
     for(;;) {
-        k0_print("> ");
+        sc_print("> ");
         get_line();
-        k0_print("Unknown command!\n");
+        sc_print("Unknown command!\n");
     }
     return 0;
 }
