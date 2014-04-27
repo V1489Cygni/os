@@ -63,3 +63,9 @@ void k0_print(char *text) {
         k0_print_char(text[i]);
     }
 }
+
+void k0_print_int(int i) {
+    for(int d = 1e9; d > 0; d /= 10) {
+        k0_print_char('0' + (i / d) % 10);
+    }
+}
