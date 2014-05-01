@@ -32,5 +32,5 @@ void init_tables() {
 
 void init_paging() {
     init_tables();
-    set_paging_on();
+    //set_paging_on();
 }

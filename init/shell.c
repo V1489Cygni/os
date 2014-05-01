@@ -1,4 +1,5 @@
 #include "../include/syscalls.h"
+#include "../k0/output.h"
 
 #define BUFFER_SIZE 256
 
