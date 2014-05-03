@@ -3,5 +3,6 @@
 
 void sc_get_char(char*);
 void sc_print(char*);
+void exec(void*);
 
 #endif

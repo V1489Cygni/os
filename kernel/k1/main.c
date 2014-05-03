@@ -4,10 +4,11 @@
 #include "memory/paging.h"
 #include "memory/physical.h"
 #include "pit.h"
+#include <scheduler.h>
+#include <multiboot.h>
+#include "../k0/service.h"
 
-extern int init_main();
-
-int k1_main() {
+int k1_main(module_header_t *initrd_header) {
     k0_print("Kernel level 1 loaded.\nInitializing keyboard... ");
     init_keyboard();
     k0_print("OK\nInitializing syscalls... ");
@@ -17,10 +18,18 @@ int k1_main() {
     k0_print("OK\nInitializing paging... ");
     init_paging();
     k0_print("OK\nInitializing timer... ");
-    //init_pit();
+    init_pit();
     k0_print("OK\nEnableing interupts... ");
     __asm__ __volatile__ ("sti");
     k0_print("OK\n");
-    init_main();
+    int size = initrd_header->mod_end - initrd_header->mod_start;
+    int *module = (int *)initrd_header->mod_start;
+    for(int i = 0; i < size / 4; i++) {
+        if(module[i] == 0xC0DEAA55) {
+            k0_print("Found.\n");
+            memcpy((char *)0x1000000, (char *)module + 4 * i, size);
+            start_task(0x1000004);
+        }
+    }
     return 0;
 }

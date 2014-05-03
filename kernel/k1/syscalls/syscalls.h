@@ -5,5 +5,6 @@
 
 void get_char_tty(regs*);
 void print_tty(regs*);
+void exec(regs*);
 
 #endif

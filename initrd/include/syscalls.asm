@@ -12,3 +12,9 @@ sc_print:
     mov ecx, [esp + 4]
     int 80h
 ret
+
+sc_exec:
+    mov eax, 2
+    mov ecx, [esp + 4]
+    int 80h
+ret

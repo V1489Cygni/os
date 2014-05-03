@@ -22,5 +22,6 @@ void syscall_common_handler(regs* r) {
 void init_syscalls() {
     set_handler(0, get_char_tty);
     set_handler(1, print_tty);
-    set_idt_entry(0x80, (unsigned)syscall_primary_handler, 0x08, 0x8E);
+    set_handler(2, exec);
+    set_idt_entry(0x80, (int)syscall_primary_handler, 0x08, 0xEE);
 }

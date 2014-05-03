@@ -29,7 +29,6 @@ void init_tss(int num, int ss0, int esp0) {
 }
 
 void set_esp(int esp) {
-    k0_print_int(esp);
     tss.esp0 = esp;
 }
 

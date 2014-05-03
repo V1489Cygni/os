@@ -33,6 +33,9 @@ int shell_main() {
     for(;;) {
         sc_print("> ");
         get_line();
+        if(buffer[0] == 'f' && buffer[1] == '\0') {
+            __asm__ __volatile__ ("hlt");
+        }
         sc_print("Unknown command!\n");
     }
     return 0;

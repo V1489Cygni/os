@@ -20,6 +20,7 @@ mboot:
     dd MULTIBOOT_CHECKSUM
     
 kernel_runner:
+    push ebx
     call k0_main
     jmp $
 

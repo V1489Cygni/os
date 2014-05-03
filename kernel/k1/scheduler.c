@@ -7,16 +7,6 @@ int last = 0;
 
 extern gdt_entry gdt;
 
-void test_f2() {
-    k0_print("|\n");
-    k0_print_int((int)&gdt);
-    //k0_print("A");
-    //__asm__ __volatile__ ("cli");
-    k0_print("B");
-    __asm__ volatile ("hlt");
-    for(;;) {}
-}
-
 extern void jump_usermode(int, int, int);
 
 void execute_in_usermode(proc_info p) {
@@ -25,6 +15,6 @@ void execute_in_usermode(proc_info p) {
 
 void start_task(int addr) {
     queue[last].r.eip = addr;
-    queue[last].r.esp = 0x40000000;
+    queue[last].r.esp = 0x4000000;
     execute_in_usermode(queue[last++]);
 }
