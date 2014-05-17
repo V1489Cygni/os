@@ -1,8 +1,6 @@
-#include "syscalls.h"
-
-#include "../k0/idt.h"
-#include "../k0/regs.h"
-#include "syscalls/syscalls.h"
+#include <syscalls.h>
+#include <idt.h>
+#include <regs.h>
 
 #define SYSCALL_NUMBER 256
 

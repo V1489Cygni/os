@@ -1,9 +1,9 @@
-#include "output.h"
-#include "gdt.h"
-#include "idt.h"
-#include "isr.h"
-#include "irq.h"
-#include "../include/multiboot.h"
+#include <output.h>
+#include <gdt.h>
+#include <idt.h>
+#include <isr.h>
+#include <irq.h>
+#include <multiboot.h>
 
 extern int k1_main(module_header_t *);
 

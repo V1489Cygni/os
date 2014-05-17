@@ -1,7 +1,7 @@
 #ifndef K0_IRQ_H
 #define K0_IRQ_H
 
-#include "regs.h"
+#include <regs.h>
 
 extern void irq0();
 extern void irq1();

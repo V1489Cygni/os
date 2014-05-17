@@ -1,5 +1,5 @@
-#include "idt.h"
-#include "service.h"
+#include <idt.h>
+#include <service.h>
 
 idt_entry idt[256];
 idt_ptr idtp;

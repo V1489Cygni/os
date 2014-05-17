@@ -1,7 +1,7 @@
 #ifndef K0_ISR_H
 #define K0_ISR_H
 
-#include "regs.h"
+#include <regs.h>
 
 extern void isr0();
 extern void isr1();

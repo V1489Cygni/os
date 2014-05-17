@@ -1,6 +1,5 @@
-#include "output.h"
-
-#include "service.h"
+#include <output.h>
+#include <service.h>
 
 short *textmemptr = (short*)0xB8000;
 int cols = 80, rows = 24;

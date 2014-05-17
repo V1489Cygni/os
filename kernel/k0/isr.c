@@ -1,6 +1,6 @@
-#include "isr.h"
-#include "idt.h"
-#include "output.h"
+#include <isr.h>
+#include <idt.h>
+#include <output.h>
 
 char *exception_messages[] = {
     (char*)"Division By Zero",

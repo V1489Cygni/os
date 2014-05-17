@@ -1,8 +1,8 @@
-#include "pit.h"
-#include "../k0/service.h"
-#include "../k0/irq.h"
-#include "../k0/regs.h"
-#include "../k0/output.h"
+#include <pit.h>
+#include <service.h>
+#include <irq.h>
+#include <regs.h>
+#include <output.h>
 
 int timer_ticks = 0;
 

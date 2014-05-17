@@ -12,3 +12,6 @@
 
 #Temp files
 *.un~
+
+#Dump files
+*.dump

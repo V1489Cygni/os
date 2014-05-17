@@ -1,6 +1,4 @@
-#include "paging.h"
-
-#include "../../k0/output.h"
+#include <paging.h>
 
 void** page_dir[1024]__attribute__((aligned(4096)));
 void* page_tables[1024 * 1024]__attribute__((aligned(4096)));
@@ -32,5 +30,5 @@ void init_tables() {
 
 void init_paging() {
     init_tables();
-    //set_paging_on();
+    set_paging_on();
 }

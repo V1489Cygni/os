@@ -1,6 +1,6 @@
-#include "gdt.h"
-#include "service.h"
-#include "output.h"
+#include <gdt.h>
+#include <service.h>
+#include <output.h>
 
 #define ENTRY_NUMBER 6
 

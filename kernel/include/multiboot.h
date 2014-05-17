@@ -1,3 +1,6 @@
+#ifndef MULTIBOOT_H
+#define MULTIBOOT_H
+
 typedef struct {
    int flags;
    int mem_lower;
@@ -31,3 +34,5 @@ typedef struct {
     int string;
     int reserved;
 }__attribute__((packed)) module_header_t;
+
+#endif

@@ -1,7 +1,7 @@
 #ifndef SCHEDULER_H
 #define SCHEDULER_H
 
-#include "../k0/regs.h"
+#include <regs.h>
 
 typedef struct {
     regs r;

@@ -1,12 +1,12 @@
-#include "../k0/output.h"
-#include "input.h"
-#include "syscalls.h"
-#include "memory/paging.h"
-#include "memory/physical.h"
-#include "pit.h"
+#include <output.h>
+#include <input.h>
+#include <syscalls.h>
+#include <paging.h>
+#include <physical.h>
+#include <pit.h>
 #include <scheduler.h>
 #include <multiboot.h>
-#include "../k0/service.h"
+#include <service.h>
 
 int k1_main(module_header_t *initrd_header) {
     k0_print("Kernel level 1 loaded.\nInitializing keyboard... ");
@@ -16,7 +16,7 @@ int k1_main(module_header_t *initrd_header) {
     k0_print("OK\nInitializing memory management... ");
     init_physical();
     k0_print("OK\nInitializing paging... ");
-    init_paging();
+    //init_paging();
     k0_print("OK\nInitializing timer... ");
     init_pit();
     k0_print("OK\nEnableing interupts... ");

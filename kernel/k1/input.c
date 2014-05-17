@@ -1,8 +1,6 @@
-#include "input.h"
-
-#include "../k0/service.h"
-#include "../k0/irq.h"
-#include "../k0/output.h"
+#include <input.h>
+#include <service.h>
+#include <irq.h>
 
 #define BUFFER_SIZE 256
 

@@ -1,11 +1,7 @@
-#include "scheduler.h"
-#include "../k0/output.h"
-#include "../k0/gdt.h"
+#include <scheduler.h>
 
 proc_info queue[10];
 int last = 0;
-
-extern gdt_entry gdt;
 
 extern void jump_usermode(int, int, int);
 
